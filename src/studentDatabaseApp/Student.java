@@ -8,7 +8,8 @@ public class Student {
 	private String lastName;
 	private String gradeYear;
 	private String studentID;
-	private String courses;
+	private String courses = null;
+	private String course;
 	private int tuitionBalance;
 	private int costOfCourse = 600;
 	private static int Id = 1000;
@@ -44,9 +45,17 @@ public class Student {
 	//enroll in course
 	public void enroll(){
 		do{
-			
+			System.out.print("Enter the course to enroll or Q to quit : ");
+			Scanner sc = new Scanner(System.in);
+			course = sc.nextLine();
+			if(!course.equals("Q")){
+				courses = courses + course + "\n" ;
+			}
+			else{ break; }
 		}while(1 != 0);
+		System.out.println("Courses enrolled :\n" + courses);
 	}
+	
 	
 	
 	//view balance
